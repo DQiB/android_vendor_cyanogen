@@ -14,5 +14,11 @@ else
     endif
 endif
 
+# for goo-inside.me ota
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.goo.developerid=phiexz \
+    ro.goo.rom=cm7_nightly \
+    ro.goo.version=$(shell date +%Y%m%d) \
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.modversion=$(CMVERSION)
