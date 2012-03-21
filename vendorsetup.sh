@@ -1,4 +1,5 @@
 add_lunch_combo cyanogen_blade-eng
 add_lunch_combo cyanogen_cooper-eng
+add_lunch_combo cyanogen_gio-eng
 add_lunch_combo cyanogen_tass-eng
 add_lunch_combo cyanogen_v9-eng
