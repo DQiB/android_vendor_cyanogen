@@ -1,8 +1,9 @@
 PRODUCT_VERSION_MAJOR = 7
 PRODUCT_VERSION_MINOR = 2
-PRODUCT_VERSION_MAINTENANCE = 0-RC1
+PRODUCT_VERSION_MAINTENANCE = 0
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=GWK74
+## Our eng-builds get build_desc, force a user-like build_id
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=$(BUILD_ID)
 
 ifdef CYANOGEN_NIGHTLY
     CMVERSION := CyanogenMod-$(PRODUCT_VERSION_MAJOR)-$(shell date +%Y%m%d)-NIGHTLY-$(CM_BUILD)
@@ -13,12 +14,6 @@ else
         CMVERSION := CyanogenMod-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-NIGHTLY-$(CM_BUILD)
     endif
 endif
-
-# for goo-inside.me ota
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.developerid=phiexz \
-    ro.goo.rom=cm7_nightly \
-    ro.goo.version=$(shell date +%Y%m%d) \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.modversion=$(CMVERSION)
